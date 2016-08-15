@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NowPlaying" />
-        <activity android:name=".TopRated"></activity>
+        <activity android:name=".TopRated" />
+        <activity android:name=".Search"></activity>
     </application>
 
 </manifest>

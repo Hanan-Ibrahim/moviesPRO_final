@@ -28,6 +28,7 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
   Button search,nowploaying,toprated;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
