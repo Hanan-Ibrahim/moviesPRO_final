@@ -28,7 +28,7 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
   Button search,nowploaying,toprated;
-    
+    EditText e;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
         search = (Button)findViewById(R.id.search_btn);
         nowploaying = (Button)findViewById(R.id.topviews_btn);
         toprated = (Button)findViewById(R.id.toprated_btn);
+        e=(EditText)findViewById(R.id.edit_message);
     }
     public void topRated (View view) {
             Intent intent = new Intent(MainActivity.this, TopRated.class);
