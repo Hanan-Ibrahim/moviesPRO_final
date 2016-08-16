@@ -43,10 +43,10 @@
         android:id="@+id/ivImage"
         android:src="@mipmap/ic_launcher"
         android:maxWidth="780dp"
+        android:maxHeight="780dp"
         android:adjustViewBounds="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-   />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
