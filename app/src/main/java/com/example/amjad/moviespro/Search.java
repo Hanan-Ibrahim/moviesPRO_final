@@ -51,10 +51,12 @@ public class Search extends Activity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position,
                                     long id) {
                 Toast.makeText(getApplicationContext(), movieList.get(position).getTitle(), Toast.LENGTH_LONG).show();
-               // Intent intent = new Intent(Se)
-
-
-
+                Intent intent = new Intent(Search.this,SingleItemView.class);
+                intent.putExtra("title",movieList.get(position).getTitle());
+                intent.putExtra("id",movieList.get(position).getId());
+                intent.putExtra("vote_average",movieList.get(position).getVote_average());
+                intent.putExtra("m_image",movieList.get(position).getM_image());
+                startActivity(intent);
 
             }
         });
