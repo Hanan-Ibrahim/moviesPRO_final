@@ -27,9 +27,9 @@ import android.widget.ListView;
 
 public class Search extends Activity {
     Intent intent= getIntent();
-    final String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+    String message = intent.getStringExtra("ex");
     ArrayList<Movies> movieList;
-    String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query=" + message;
+    String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+message;
     MoviesAdapter adapter;
 
 
@@ -50,8 +50,12 @@ public class Search extends Activity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position,
                                     long id) {
-                // TODO Auto-generated method stub
                 Toast.makeText(getApplicationContext(), movieList.get(position).getTitle(), Toast.LENGTH_LONG).show();
+               // Intent intent = new Intent(Se)
+
+
+
+
             }
         });
     }

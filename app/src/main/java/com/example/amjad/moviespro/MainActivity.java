@@ -27,8 +27,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-  Button search,nowploaying,toprated;
-    public static String EXTRA_MESSAGE = "com.example.amjad.hanansimdb";
+  Button search,nowploaying ,toprated;
+
 
 
     @Override
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         Intent intent= new Intent(this,Search.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra("ex", message);
         startActivity(intent);
     }
 
