@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="@drawable/hanan1"
    >
 
 
@@ -16,7 +17,7 @@
         android:layout_alignLeft="@+id/id"
         android:layout_alignStart="@+id/id"
         android:layout_marginBottom="10dp"
-        android:textSize="40dp"/>
+        android:textSize="30dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,7 +41,9 @@
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/title"
-        android:layout_alignStart="@+id/title" />
+        android:layout_alignStart="@+id/title"
+        android:textColor="#ff0000"
+        android:textSize="30dp"/>
 
     <ImageView
         android:layout_width="wrap_content"
