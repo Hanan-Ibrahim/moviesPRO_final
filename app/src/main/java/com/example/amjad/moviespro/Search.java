@@ -26,7 +26,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class Search extends Activity {
+
     ArrayList<Movies> movieList;
+
     MoviesAdapter adapter;
 
 

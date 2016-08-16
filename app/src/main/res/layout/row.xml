@@ -37,6 +37,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/ivImage"
         android:src="@mipmap/ic_launcher"
+        android:maxHeight="200dp"
+        android:maxWidth="342dp"
         android:adjustViewBounds="true"
         android:layout_alignBottom="@+id/vote_average"
         android:layout_alignParentLeft="true"
