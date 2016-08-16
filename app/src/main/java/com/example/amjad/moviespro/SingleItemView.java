@@ -16,6 +16,8 @@ public class SingleItemView extends Activity {
     String title;
     String vote_average;
     String m_image;
+    String overview;
+    String release_date;
 
 
     @Override
@@ -27,19 +29,21 @@ public class SingleItemView extends Activity {
         title = i.getStringExtra("title");
         vote_average = i.getStringExtra("vote_average");
         m_image = i.getStringExtra("m_image");
-        
-        TextView txtid = (TextView) findViewById(R.id.id);
+        overview=i.getStringExtra("overview");
+        release_date=i.getStringExtra("release_date");
         TextView txttitle = (TextView) findViewById(R.id.title);
-        TextView txtvote_average = (TextView) findViewById(R.id.vote_average);
+        TextView txtrelease_date = (TextView) findViewById(R.id.release_date);
+        TextView txtoverview = (TextView) findViewById(R.id.overview);
         ImageView imgflag = (ImageView) findViewById(R.id.ivImage);
 
 
         imgflag.setImageResource(R.drawable.ic_launcher);
         new DownloadImageTask(imgflag).execute(m_image);
-        txtid.setText(id);
-        txttitle.setText(title);
-        txtvote_average.setText(vote_average);
 
+        txttitle.setText(title);
+        txtrelease_date.setText(vote_average);
+        txtoverview.setText(overview);
+        txtrelease_date.setText(release_date);
 
     }
 
@@ -70,3 +74,6 @@ private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
 
 }
 }
+
+
+

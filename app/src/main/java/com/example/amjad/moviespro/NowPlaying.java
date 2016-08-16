@@ -55,6 +55,8 @@ public class NowPlaying extends Activity {
                 intent.putExtra("id",movieList.get(position).getId());
                 intent.putExtra("vote_average",movieList.get(position).getVote_average());
                 intent.putExtra("m_image",movieList.get(position).get_M_image());
+                intent.putExtra("overview",movieList.get(position).getOverview());
+                intent.putExtra("release_date",movieList.get(position).getRelease_date());
                 startActivity(intent);
             }
         });
@@ -69,8 +71,8 @@ public class NowPlaying extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             dialog = new ProgressDialog(NowPlaying.this);
-            dialog.setMessage("Loading, please wait");
-            dialog.setTitle("Connecting server");
+            dialog.setMessage("Loading, please wait...");
+            dialog.setTitle("Connecting to server");
             dialog.show();
             dialog.setCancelable(false);
         }
@@ -104,6 +106,8 @@ public class NowPlaying extends Activity {
                         movie.setId(object.getString("id"));
                         movie.setVote_average(object.getString("vote_average"));
                         movie.setM_image(object.getString("poster_path"));
+                        movie.setOverview(object.getString("overview"));
+                        movie.setRelease_date(object.getString("release_date"));
 
                         movieList.add(movie);
                     }

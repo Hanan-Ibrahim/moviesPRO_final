@@ -60,6 +60,8 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
         public TextView title;
         public TextView id;
         public TextView vote_average;
+        public TextView overview;
+        public TextView release_date;
 
 
     }
