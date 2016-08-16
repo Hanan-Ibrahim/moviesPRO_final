@@ -58,7 +58,7 @@ public class Search extends Activity {
                 intent.putExtra("title", movieList.get(position).getTitle());
                 intent.putExtra("id", movieList.get(position).getId());
                 intent.putExtra("vote_average", movieList.get(position).getVote_average());
-                intent.putExtra("m_image", movieList.get(position).getM_image());
+                intent.putExtra("m_image", movieList.get(position).get_M_image());
                 startActivity(intent);
 
             }

@@ -9,10 +9,14 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="title"
+        android:textStyle="bold"
+        android:textColorHighlight="#e40c0c"
         android:id="@+id/title"
         android:layout_above="@+id/vote_average"
         android:layout_alignLeft="@+id/id"
-        android:layout_alignStart="@+id/id" />
+        android:layout_alignStart="@+id/id"
+        android:layout_marginBottom="10dp"
+        android:textSize="40dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,9 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+
         android:text="vote "
         android:id="@+id/vote_average"
-        android:layout_marginBottom="71dp"
+        android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/title"
         android:layout_alignStart="@+id/title" />
