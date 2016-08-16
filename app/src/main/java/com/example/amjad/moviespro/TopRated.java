@@ -50,6 +50,12 @@ public class TopRated extends Activity {
                                     long id) {
                 // TODO Auto-generated method stub
                 Toast.makeText(getApplicationContext(), movieList.get(position).getTitle(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(TopRated.this,SingleItemView.class);
+                intent.putExtra("title",movieList.get(position).getTitle());
+                intent.putExtra("id",movieList.get(position).getId());
+                intent.putExtra("vote_average",movieList.get(position).getVote_average());
+                intent.putExtra("m_image",movieList.get(position).getM_image());
+                startActivity(intent);
             }
         });
     }
