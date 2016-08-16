@@ -36,13 +36,14 @@ public class Search extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent= getIntent();
+        Intent intent = getIntent();
         String ex = intent.getStringExtra("ex");
-        String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+ex;
+        String ex1=covert(ex);
+        String url = "http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query=" + ex1;
         movieList = new ArrayList<Movies>();
         new JSONAsyncTask().execute(url);
 
-        ListView listview = (ListView)findViewById(R.id.list);
+        ListView listview = (ListView) findViewById(R.id.list);
         adapter = new MoviesAdapter(getApplicationContext(), R.layout.row, movieList);
 
         listview.setAdapter(adapter);
@@ -53,11 +54,11 @@ public class Search extends Activity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position,
                                     long id) {
                 Toast.makeText(getApplicationContext(), movieList.get(position).getTitle(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Search.this,SingleItemView.class);
-                intent.putExtra("title",movieList.get(position).getTitle());
-                intent.putExtra("id",movieList.get(position).getId());
-                intent.putExtra("vote_average",movieList.get(position).getVote_average());
-                intent.putExtra("m_image",movieList.get(position).getM_image());
+                Intent intent = new Intent(Search.this, SingleItemView.class);
+                intent.putExtra("title", movieList.get(position).getTitle());
+                intent.putExtra("id", movieList.get(position).getId());
+                intent.putExtra("vote_average", movieList.get(position).getVote_average());
+                intent.putExtra("m_image", movieList.get(position).getM_image());
                 startActivity(intent);
 
             }
@@ -129,15 +130,18 @@ public class Search extends Activity {
         protected void onPostExecute(Boolean result) {
             dialog.cancel();
             adapter.notifyDataSetChanged();
-            if(result == false)
+            if (result == false)
                 Toast.makeText(getApplicationContext(), "Unable to fetch data from server", Toast.LENGTH_LONG).show();
 
         }
     }
 
 
+    public String covert(String string) {
+        String store;
+        String replaced = string.replace(" ","%20");
+         return replaced;
+    }
 
 
-
-
-}
+        }

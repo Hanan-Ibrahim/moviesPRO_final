@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.amjad.moviespro.MainActivity"
-    android:background="#f189b6">
+    android:background="@drawable/hanan">
 
     <EditText
         android:id="@+id/edit_message"
