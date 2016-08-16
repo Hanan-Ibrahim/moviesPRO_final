@@ -39,7 +39,6 @@ public class Search extends Activity {
         Intent intent= getIntent();
         String ex = intent.getStringExtra("ex");
         String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+ex;
-
         movieList = new ArrayList<Movies>();
         new JSONAsyncTask().execute(url);
 
