@@ -26,10 +26,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class Search extends Activity {
-    Intent intent= getIntent();
-    String ex = intent.getStringExtra("ex");
     ArrayList<Movies> movieList;
-    String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+ex;
     MoviesAdapter adapter;
 
 
@@ -37,6 +34,10 @@ public class Search extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent= getIntent();
+        String ex = intent.getStringExtra("ex");
+        String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+ex;
+
         movieList = new ArrayList<Movies>();
         new JSONAsyncTask().execute(url);
 
