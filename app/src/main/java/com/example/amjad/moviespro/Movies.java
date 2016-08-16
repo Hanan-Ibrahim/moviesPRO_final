@@ -38,6 +38,11 @@ public class Movies {
         return "http://image.tmdb.org/t/p/w342"+ m_image;
     }
 
+    public String get_M_image() {
+        return "http://image.tmdb.org/t/p/w780"+ m_image;
+    }
+
+
     public void setM_image(String m_image) {
         this.m_image = m_image;
     }

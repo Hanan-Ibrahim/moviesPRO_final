@@ -25,19 +25,19 @@ public class SingleItemView extends Activity {
         title = i.getStringExtra("title");
         vote_average = i.getStringExtra("vote_average");
         m_image = i.getStringExtra("poster_path");
-
-        String url = "http://image.tmdb.org/t/p/w342"+m_image;
-
+        
         TextView txtid = (TextView) findViewById(R.id.id);
         TextView txttitle = (TextView) findViewById(R.id.title);
         TextView txtvote_average = (TextView) findViewById(R.id.vote_average);
         ImageView imgflag = (ImageView) findViewById(R.id.ivImage);
 
-
+        Movies movies = new Movies();
+        imgflag.setImageResource(R.mipmap.ic_launcher);
+        DownloadImage downloadImage = (DownloadImage) new DownloadImage(imgflag).execute(movies.get_M_image());
         txtid.setText(id);
         txttitle.setText(title);
         txtvote_average.setText(vote_average);
-        imgflag.setImageResource(R.mipmap.ic_launcher);
-        DownloadImage downloadImage = (DownloadImage) new DownloadImage(imgflag).execute(url);
+
+
     }
 }
