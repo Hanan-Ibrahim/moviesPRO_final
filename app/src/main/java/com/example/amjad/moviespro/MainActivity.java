@@ -28,6 +28,7 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
   Button search,nowploaying ,toprated;
+    EditText editText;
 
 
 
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
         search = (Button)findViewById(R.id.search_btn);
         nowploaying = (Button)findViewById(R.id.topviews_btn);
         toprated = (Button)findViewById(R.id.toprated_btn);
+        editText = (EditText) findViewById(R.id.edit_message);
     }
     public void topRated (View view) {
             Intent intent = new Intent(MainActivity.this, TopRated.class);
@@ -50,7 +52,6 @@ public class MainActivity extends Activity {
 
     public void search (View view){
         Intent intent= new Intent(this,Search.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra("ex", message);
         startActivity(intent);

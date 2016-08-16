@@ -27,9 +27,9 @@ import android.widget.ListView;
 
 public class Search extends Activity {
     Intent intent= getIntent();
-    String message = intent.getStringExtra("ex");
+    String ex = intent.getStringExtra("ex");
     ArrayList<Movies> movieList;
-    String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+message;
+    String url="http://api.themoviedb.org/3/search/movie?api_key=591cbbe8228f336bee2d04c457683097&query="+ex;
     MoviesAdapter adapter;
 
 
