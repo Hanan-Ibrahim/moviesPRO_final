@@ -42,8 +42,8 @@ public class SingleItemView extends Activity {
 
         txttitle.setText(title);
         txtrelease_date.setText(vote_average);
-        txtoverview.setText(overview);
-        txtrelease_date.setText(release_date);
+        txtoverview.setText("Overview : "+overview);
+        txtrelease_date.setText("Release Date: "+release_date);
 
     }
 
