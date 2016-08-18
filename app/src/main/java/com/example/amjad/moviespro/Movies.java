@@ -8,18 +8,28 @@ public class Movies {
     private String m_image;
     private String release_date;
     private String overview;
+    String genre_ids;
 
     public Movies() {
         // TODO Auto-generated constructor stub
     }
 
-    public Movies(String id, String title, String m_image, String vote_average , String release_date ,String overview ) {
+    public Movies(String id, String title, String m_image, String vote_average , String release_date ,String overview,String genre_ids ) {
         this.id = id;
         this.title = title;
         this.m_image = m_image;
         this.vote_average = vote_average;
         this.release_date= release_date;
         this.overview=overview;
+        this.genre_ids=genre_ids;
+    }
+
+    public String getGenre_ids() {
+        return genre_ids;
+    }
+
+    public void setGenre_ids(String genre_ids) {
+        this.genre_ids = genre_ids;
     }
 
     public String getOverview() {

@@ -23,7 +23,7 @@ public class SingleItemView extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_item_view);
+        setContentView(R.layout.scrollviewww);
         Intent i = getIntent();
         id = i.getStringExtra("id");
         title = i.getStringExtra("title");

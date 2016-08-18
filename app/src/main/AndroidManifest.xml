@@ -29,7 +29,8 @@
         <activity android:name=".TopRated" />
         <activity android:name=".Search" />
         <activity android:name=".SingleItemView" />
-        <activity android:name=".something"></activity>
+        <activity android:name=".something" />
+        <activity android:name=".Popular"></activity>
     </application>
 
 </manifest>

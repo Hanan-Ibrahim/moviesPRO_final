@@ -57,5 +57,11 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void popular (View view) {
+        Intent intent = new Intent(MainActivity.this, Popular.class);
+        startActivity(intent);
+    }
+
+
 
 }
