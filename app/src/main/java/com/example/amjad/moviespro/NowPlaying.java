@@ -97,6 +97,7 @@ public class NowPlaying extends Activity {
                     JSONObject jsono = new JSONObject(data);
                     JSONArray jarray = jsono.getJSONArray("results");
 
+
                     for (int i = 0; i < jarray.length(); i++) {
                         JSONObject object = jarray.getJSONObject(i);
 

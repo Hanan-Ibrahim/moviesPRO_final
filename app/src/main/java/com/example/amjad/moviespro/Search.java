@@ -77,7 +77,7 @@ public class Search extends Activity {
             super.onPreExecute();
             dialog = new ProgressDialog(Search.this);
             dialog.setMessage("Loading, please wait");
-            dialog.setTitle("Connecting server");
+            dialog.setTitle("Connecting to server");
             dialog.show();
             dialog.setCancelable(false);
         }
@@ -101,6 +101,11 @@ public class Search extends Activity {
 
                     JSONObject jsono = new JSONObject(data);
                     JSONArray jarray = jsono.getJSONArray("results");
+                    if(jarray.length()==0){
+                        Intent intent = new Intent(Search.this,something.class);
+                        startActivity(intent);
+
+                    }
 
                     for (int i = 0; i < jarray.length(); i++) {
                         JSONObject object = jarray.getJSONObject(i);
@@ -132,10 +137,11 @@ public class Search extends Activity {
         }
 
         protected void onPostExecute(Boolean result) {
-            dialog.cancel();
             adapter.notifyDataSetChanged();
             if (result == false)
                 Toast.makeText(getApplicationContext(), "Unable to fetch data from server", Toast.LENGTH_LONG).show();
+            dialog.cancel();
+
 
         }
     }

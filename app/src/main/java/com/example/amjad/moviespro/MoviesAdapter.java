@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.squareup.picasso.Picasso;
 public class MoviesAdapter extends ArrayAdapter<Movies> {
     ArrayList<Movies> movieList;
     LayoutInflater vi;
@@ -28,6 +28,7 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Resource = resource;
         movieList = objects;
+
     }
 
 
@@ -47,7 +48,12 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
             holder = (ViewHolder) v.getTag();
         }
         holder.m_image.setImageResource(R.mipmap.ic_launcher);
-        new DownloadImageTask(holder.m_image).execute(movieList.get(position).getM_image());
+      //  new DownloadImageTask(holder.m_image).execute(movieList.get(position).getM_image());
+        Picasso.with(this.getContext())
+                .load(movieList.get(position).getM_image())
+                .into(holder.m_image);
+
+
         holder.title.setText("Title :"+movieList.get(position).getTitle());
         holder.id.setText("ID : "+movieList.get(position).getId());
         holder.vote_average.setText("vote: " + movieList.get(position).getVote_average());
@@ -66,29 +72,29 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
 
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
-
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-              //  Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
-
-    }
+//    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+//        ImageView bmImage;
+//
+//        public DownloadImageTask(ImageView bmImage) {
+//            this.bmImage = bmImage;
+//        }
+//
+//        protected Bitmap doInBackground(String... urls) {
+//            String urldisplay = urls[0];
+//            Bitmap mIcon11 = null;
+//            try {
+//                InputStream in = new java.net.URL(urldisplay).openStream();
+//                mIcon11 = BitmapFactory.decodeStream(in);
+//            } catch (Exception e) {
+//              //  Log.e("Error", e.getMessage());
+//                e.printStackTrace();
+//            }
+//            return mIcon11;
+//        }
+//
+//        protected void onPostExecute(Bitmap result) {
+//            bmImage.setImageBitmap(result);
+//        }
+//
+//    }
 }
