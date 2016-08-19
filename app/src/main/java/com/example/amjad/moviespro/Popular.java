@@ -57,6 +57,7 @@ public class Popular extends Activity {
                 intent.putExtra("m_image",movieList.get(position).get_M_image());
                 intent.putExtra("overview",movieList.get(position).getOverview());
                 intent.putExtra("release_date",movieList.get(position).getRelease_date());
+               // intent.putExtra("genre_ids",movieList.get(position).getGenrs());
                 startActivity(intent);
             }
         });

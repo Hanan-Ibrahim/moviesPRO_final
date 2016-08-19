@@ -43,6 +43,8 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
             holder.title = (TextView) v.findViewById(R.id.title);
             holder.id = (TextView) v.findViewById(R.id.id);
             holder.vote_average = (TextView) v.findViewById(R.id.vote_average);
+            holder.revenue=(TextView) v.findViewById(R.id.revenue);
+            holder.genres=(TextView) v.findViewById(R.id.genres);
             v.setTag(holder);
         } else {
             holder = (ViewHolder) v.getTag();
@@ -57,6 +59,9 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
         holder.title.setText("Title :"+movieList.get(position).getTitle());
         holder.id.setText("ID : "+movieList.get(position).getId());
         holder.vote_average.setText("vote: " + movieList.get(position).getVote_average());
+    //    holder.revenue.setText("revenue : "+movieList.get(position).getRevenue());
+//        holder.genres.setText("genres: "+movieList.get(position).getGenres());
+//        holder.release_date.setText("release date: "+movieList.get(position).getRelease_date());
         return v;
 
     }
@@ -68,6 +73,8 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
         public TextView vote_average;
         public TextView overview;
         public TextView release_date;
+        public TextView revenue;
+        public TextView genres;
 
 
     }

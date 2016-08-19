@@ -1,5 +1,8 @@
 package com.example.amjad.moviespro;
 import android.graphics.Movie;
+
+import org.json.JSONArray;
+
 public class Movies {
 
     private String title;
@@ -8,29 +11,34 @@ public class Movies {
     private String m_image;
     private String release_date;
     private String overview;
-    String genre_ids;
+    private String revenue;
+    private JSONArray genres;
 
     public Movies() {
         // TODO Auto-generated constructor stub
     }
 
-    public Movies(String id, String title, String m_image, String vote_average , String release_date ,String overview,String genre_ids ) {
-        this.id = id;
+    public Movies(String title, JSONArray genres, String overview, String m_image, String vote_average, String id, String revenue, String release_date) {
         this.title = title;
+        this.genres = genres;
+        this.overview = overview;
         this.m_image = m_image;
         this.vote_average = vote_average;
-        this.release_date= release_date;
-        this.overview=overview;
-        this.genre_ids=genre_ids;
+        this.id = id;
+        this.revenue = revenue;
+        this.release_date = release_date;
     }
 
-    public String getGenre_ids() {
-        return genre_ids;
+    public void setRevenue(String revenue) {
+        this.revenue = revenue;
     }
 
-    public void setGenre_ids(String genre_ids) {
-        this.genre_ids = genre_ids;
+
+    public String getRevenue() {
+        return revenue;
     }
+
+
 
     public String getOverview() {
         return overview;

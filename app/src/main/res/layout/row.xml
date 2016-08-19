@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="vote "
         android:id="@+id/vote_average"
-        android:layout_alignBottom="@+id/ivImage"
+        android:layout_below="@+id/id"
         android:layout_alignLeft="@+id/id"
         android:layout_alignStart="@+id/id" />
 
@@ -29,7 +29,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="ID"
         android:id="@+id/id"
-        android:layout_marginTop="50dp"
         android:layout_below="@+id/title"
         android:layout_centerHorizontal="true" />
 
