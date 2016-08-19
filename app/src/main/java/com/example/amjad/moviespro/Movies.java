@@ -12,13 +12,13 @@ public class Movies {
     private String release_date;
     private String overview;
     private String revenue;
-    private JSONArray genres;
+    private String[] genres;
 
     public Movies() {
         // TODO Auto-generated constructor stub
     }
 
-    public Movies(String title, JSONArray genres, String overview, String m_image, String vote_average, String id, String revenue, String release_date) {
+    public Movies(String title,String[] genres, String overview, String m_image, String vote_average, String id, String revenue, String release_date) {
         this.title = title;
         this.genres = genres;
         this.overview = overview;
@@ -33,12 +33,17 @@ public class Movies {
         this.revenue = revenue;
     }
 
-
     public String getRevenue() {
         return revenue;
     }
 
+    public String[] getGenres() {
+        return genres;
+    }
 
+    public void setGenres(String[] genres) {
+        this.genres = genres;
+    }
 
     public String getOverview() {
         return overview;

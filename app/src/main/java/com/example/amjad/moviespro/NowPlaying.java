@@ -57,7 +57,7 @@ public class NowPlaying extends Activity {
                 intent.putExtra("m_image",movieList.get(position).get_M_image());
                 intent.putExtra("overview",movieList.get(position).getOverview());
                 intent.putExtra("release_date",movieList.get(position).getRelease_date());
-             //   intent.putExtra("revenue",movieList.get(position).getRevenue());
+                intent.putExtra("genres",movieList.get(position).getGenres());
 
                 startActivity(intent);
             }
@@ -102,6 +102,16 @@ public class NowPlaying extends Activity {
 
                     for (int i = 0; i < jarray.length(); i++) {
                         JSONObject object = jarray.getJSONObject(i);
+                        JSONArray j=object.getJSONArray("genre_ids");
+
+//                        ArrayList<String> list = new ArrayList<String>();
+//                        JSONArray jsonArray = (JSONArray)jarray;
+//                        if (jsonArray != null) {
+//                            int len = jsonArray.length();
+//                            for (int k=0;i<len;i++){
+//                                list.add(jsonArray.get(k).toString());
+//                            }
+//                        }
 
                         Movies movie = new Movies();
 
@@ -111,7 +121,8 @@ public class NowPlaying extends Activity {
                         movie.setM_image(object.getString("poster_path"));
                         movie.setOverview(object.getString("overview"));
                         movie.setRelease_date(object.getString("release_date"));
-                   //     movie.setRevenue(object.getString("revenue"));
+                     //   movie.setGenres(list);
+
 
 
                         movieList.add(movie);

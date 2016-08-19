@@ -42,7 +42,7 @@ public class SingleItemView extends Activity {
         TextView txtrelease_date = (TextView) findViewById(R.id.release_date);
         TextView txtoverview = (TextView) findViewById(R.id.overview);
         TextView revenue = (TextView) findViewById(R.id.revenue);
-        TextView genres = (TextView) findViewById(R.id.genres);
+       // TextView genres = (TextView) findViewById(R.id.genres);
         ImageView imgflag = (ImageView) findViewById(R.id.ivImage);
 
 
@@ -55,6 +55,7 @@ public class SingleItemView extends Activity {
         txtrelease_date.setText(vote_average);
         txtoverview.setText("Overview : " + overview);
         txtrelease_date.setText("Release Date: " + release_date);
+       // revenue.setText("Revenue: "+revenue);
 
     }
 }

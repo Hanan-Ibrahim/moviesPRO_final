@@ -43,25 +43,21 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
             holder.title = (TextView) v.findViewById(R.id.title);
             holder.id = (TextView) v.findViewById(R.id.id);
             holder.vote_average = (TextView) v.findViewById(R.id.vote_average);
-            holder.revenue=(TextView) v.findViewById(R.id.revenue);
-            holder.genres=(TextView) v.findViewById(R.id.genres);
+            holder.revenue = (TextView) v.findViewById(R.id.revenue);
+            holder.genres = (TextView) v.findViewById(R.id.genres);
             v.setTag(holder);
         } else {
             holder = (ViewHolder) v.getTag();
         }
         holder.m_image.setImageResource(R.mipmap.ic_launcher);
-      //  new DownloadImageTask(holder.m_image).execute(movieList.get(position).getM_image());
         Picasso.with(this.getContext())
                 .load(movieList.get(position).getM_image())
                 .into(holder.m_image);
 
 
-        holder.title.setText("Title :"+movieList.get(position).getTitle());
-        holder.id.setText("ID : "+movieList.get(position).getId());
+        holder.title.setText("Title :" + movieList.get(position).getTitle());
+        holder.id.setText("ID : " + movieList.get(position).getId());
         holder.vote_average.setText("vote: " + movieList.get(position).getVote_average());
-    //    holder.revenue.setText("revenue : "+movieList.get(position).getRevenue());
-//        holder.genres.setText("genres: "+movieList.get(position).getGenres());
-//        holder.release_date.setText("release date: "+movieList.get(position).getRelease_date());
         return v;
 
     }
@@ -78,30 +74,4 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
 
 
     }
-
-//    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-//        ImageView bmImage;
-//
-//        public DownloadImageTask(ImageView bmImage) {
-//            this.bmImage = bmImage;
-//        }
-//
-//        protected Bitmap doInBackground(String... urls) {
-//            String urldisplay = urls[0];
-//            Bitmap mIcon11 = null;
-//            try {
-//                InputStream in = new java.net.URL(urldisplay).openStream();
-//                mIcon11 = BitmapFactory.decodeStream(in);
-//            } catch (Exception e) {
-//              //  Log.e("Error", e.getMessage());
-//                e.printStackTrace();
-//            }
-//            return mIcon11;
-//        }
-//
-//        protected void onPostExecute(Bitmap result) {
-//            bmImage.setImageBitmap(result);
-//        }
-//
-//    }
 }
